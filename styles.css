@@ -1,0 +1,326 @@
+:root{
+    --primary-text: #1f2933;
+    --secondary-text: #6b7280;
+    --background-color: #fafafa;
+    --accent-color-hover: #8dc3c0;
+    --accent-color: #99d3bc;
+    --light-section-bg: #aed7b8;
+    --border-color: #e5e7eb;
+    --border-color2: #99d3bc;
+
+    --heading-font: 'Inter', sans-serif;
+    --heading-font-weight: 700;
+    --body-font: 'Inter', sans-serif;
+    --body-font-weight: 400;
+}
+
+
+/*=== BASE STYLES ===*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid var(--border-color2);
+    background-color: var(--background-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+ 
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+ /* === Hamburger Menu === */
+    .hamburger {
+        display:none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-text);
+        border-radius: 3px;
+        transition: all;
+    }
+
+.logo {
+    font-weight: var(--heading-font-weight);
+    font-size: 22px;
+}
+
+nav a{
+    
+    margin-left: 40px;
+    text-decoration: none;
+    color: var(--primary-text);
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* ==== HERO ==== */
+
+.hero {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1{
+    font-size: 40px;
+    font-weight: var(--heading-font-weight);
+    margin-bottom: 16px;
+}
+
+.hero-subtext {
+    font-size: 20px;
+    font-weight: var(--body-font-weight);
+    margin-bottom:16px;
+}
+
+.hero-buttons {
+    margin-top: 32px;
+}
+
+/* ==== BUTTONS ==== */
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 16px;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.btn-secondary {
+    border: 1px solid var(--accent-color);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* ==== SELECTED WORKS ==== */
+
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px;
+}
+
+/* ==== SECTIONS ==== */
+.section {
+    padding: 80px 0;
+}
+
+.section-light {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: var(--heading-font-weight);
+    margin-bottom: 24px;
+}
+
+/* ==== PROJECTS ==== */
+.project-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+    background-color: white;
+}
+
+.project-card h3{
+    margin-bottom: 14px;
+}
+
+.project-card p {
+    margin-bottom: 12px;
+}
+
+.project-card .tech{
+    font-size: 14px;
+    color: var(--secondary-text);   
+}
+
+.project-card a {
+    color: white;
+    background-color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid var(--accent-color);
+    padding: 10px 10px;
+    border-radius: 6px;
+}
+
+.contact p{
+    margin-bottom: 24px;
+    max-width: 600px;
+}
+
+/* ==== FOOTER ==== */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 32px 0;
+    text-align: left;
+}
+
+.footer-meta {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-top: 8px;
+}
+
+/* ==== SCROLL TO TOP BUTTON ==== */
+
+.scroll-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: #555;
+}   
+
+
+
+/* ==== MEDIA QUERIES ==== */
+@media (max-width: 768px) {
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background-color: var(--background-color);
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .navigation.open{
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Animate hamburger -> X when open */
+    .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+   .scroll-top {
+        bottom: 16px;   /* closer to edge */
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+}
